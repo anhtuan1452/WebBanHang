@@ -24,13 +24,18 @@ CREATE TABLE Products (
     nameProduct NVARCHAR(100) NOT NULL,
     description NVARCHAR(MAX),
     price INT NOT NULL,
-    stock INT DEFAULT 0,
+    quantity INT DEFAULT 0,
     category_id INT,
     brand NVARCHAR(100),
     image_url NVARCHAR(255),
     created_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (category_id) REFERENCES Categories(id)
 );
+drop table reviews
+drop table Order_Items
+drop table orders
+drop table users
+drop table Products
 
 -- Bảng Orders: Lưu thông tin các đơn hàng
 CREATE TABLE Orders (
